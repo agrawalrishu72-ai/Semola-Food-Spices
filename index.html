@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEMOLA FOOD & SPICES — Premium Indian Spices & Desi Ghee</title>
+  <meta name="description" content="Semola Food & Spices is a premium manufacturer bringing pure Indian spices, gourmet blends, and traditional Bilona cow ghee to kitchens in over 100 countries.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Intro Logo Animation Splash Screen -->
+  <div id="intro-splash">
+    <div class="splash-logo-container">
+      <img src="assets/logo.jpg" alt="Semola Logo" class="splash-logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\'><circle cx=\'75\' cy=\'75\' r=\'70\' fill=\'%23B71C1C\'/><text x=\'75\' y=\'85\' font-family=\'serif\' font-size=\'45\' fill=\'%23D4AF37\' text-anchor=\'middle\'>S</text></svg>'">
+      <h1 class="splash-text">SEMOLA</h1>
+      <p class="splash-tagline" data-translate="tagline">हर स्वाद हमारी पहचान</p>
+    </div>
+  </div>
+
+  <!-- Top Navigation Header -->
+  <header id="main-header">
+    <a href="#" class="logo-container" id="brand-logo-link">
+      <img src="assets/logo.jpg" alt="Semola Logo" class="logo-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'><circle cx=\'50\' cy=\'50\' r=\'45\' fill=\'%23B71C1C\'/><text x=\'50\' y=\'58\' font-family=\'serif\' font-size=\'30\' fill=\'%23D4AF37\' text-anchor=\'middle\'>S</text></svg>'">
+      <span class="logo-text" data-translate="brandName">SEMOLA FOOD & SPICES</span>
+    </a>
+    
+    <nav>
+      <ul>
+        <li><a href="#" class="nav-link active" id="nav-home" data-translate="navHome">Home</a></li>
+        <li><a href="#shop" class="nav-link" id="nav-shop" data-translate="navShop">Shop Spices</a></li>
+        <li><a href="#recipes" class="nav-link" id="nav-recipes" data-translate="navRecipes">Recipes</a></li>
+        <li><a href="#founders" class="nav-link" id="nav-founders" data-translate="navFounders">Founders</a></li>
+        <li><a href="#mission" class="nav-link" id="nav-mission" data-translate="navMission">Our Vision</a></li>
+      </ul>
+    </nav>
+    
+    <div class="nav-actions">
+      <!-- Language Toggle EN <-> HI -->
+      <button class="lang-btn" id="lang-toggle-btn">HI</button>
+      
+      <!-- Dark/Light Mode Toggle -->
+      <button class="icon-btn" id="theme-toggle-btn" aria-label="Toggle Theme">🌓</button>
+      
+      <!-- Wishlist Action -->
+      <button class="icon-btn" id="open-wishlist-btn" aria-label="Open Wishlist">
+        ❤️ <span class="badge-count" id="wishlist-badge-count">0</span>
+      </button>
+
+      <!-- Cart Action -->
+      <button class="icon-btn" id="open-cart-btn" aria-label="Open Shopping Cart">
+        🛒 <span class="badge-count" id="cart-badge-count">0</span>
+      </button>
+
+      <button class="hamburger" id="mobile-menu-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="floating-spices">
+      <div class="spice-particle" style="top: 15%; left: 8%; animation-delay: 0s;">🌶️</div>
+      <div class="spice-particle" style="top: 25%; right: 10%; animation-delay: 2s;">🌿</div>
+      <div class="spice-particle" style="bottom: 20%; left: 15%; animation-delay: 4s;">✨</div>
+      <div class="spice-particle" style="bottom: 30%; right: 12%; animation-delay: 1s;">🌾</div>
+      <div class="spice-particle" style="top: 60%; left: 5%; animation-delay: 3s;">⭐</div>
+    </div>
+    
+    <div class="hero-grid-layout">
+      <!-- Text details -->
+      <div class="hero-text-content">
+        <p class="hero-tagline" data-translate="tagline">हर स्वाद हमारी पहचान</p>
+        <h1 style="font-size: 3.2rem;" data-translate="heroTitle">Experience the Authentic Taste of India</h1>
+        <p data-translate="heroSubtitle">
+          Premium spices and food products made with purity, tradition, and uncompromising quality.
+        </p>
+        
+        <!-- Trust badges -->
+        <div class="hero-trust-badges">
+          <span class="trust-badge">✔ FSSAI Licensed</span>
+          <span class="trust-badge">✔ UDYAM (MSME) Registered</span>
+          <span class="trust-badge">✔ Premium Quality</span>
+          <span class="trust-badge">✔ Hygienically Processed</span>
+          <span class="trust-badge">✔ Made in India</span>
+          <span class="trust-badge">✔ Export Ready</span>
+        </div>
+
+        <div class="hero-btns" style="justify-content: flex-start; gap: 1rem; flex-wrap: wrap;">
+          <a href="#shop" class="btn btn-primary" id="hero-cta-shop" data-translate="btnShopNow">Shop Now</a>
+          <button class="btn btn-secondary" id="distributor-trigger-btn" data-translate="btnBecomeDistributor">Become Distributor</button>
+          <button class="btn btn-secondary" id="bulk-trigger-btn" data-translate="btnBulkOrderInquiry">Bulk Order Inquiry</button>
+        </div>
+      </div>
+
+      <!-- Rotating 3D Carousel of Semola Product Boxes -->
+      <div class="hero-carousel-container">
+        <div class="carousel-3d-scene">
+          <div class="carousel-3d-track" id="carousel-track-3d">
+            <!-- Populated dynamically with product cards in app.js -->
+          </div>
+        </div>
+        <div class="carousel-3d-controls">
+          <button class="carousel-arrow-btn" id="prev-3d-btn">&lt;</button>
+          <button class="carousel-arrow-btn" id="next-3d-btn">&gt;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Stats Counter Bar Section -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3 class="stat-number" data-target="100">100+</h3>
+        <p class="stat-label">Happy Customers</p>
+      </div>
+      <div class="stat-card">
+        <h3 class="stat-number" data-target="15">15+</h3>
+        <p class="stat-label">Spices & Blends</p>
+      </div>
+      <div class="stat-card">
+        <h3 class="stat-number" data-target="5">5+</h3>
+        <p class="stat-label">Partner Retailers</p>
+      </div>
+      <div class="stat-card">
+        <h3 class="stat-number" data-target="1">1+</h3>
+        <p class="stat-label">Countries Served</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" style="border-top: 1px solid rgba(212, 175, 55, 0.15);">
+    <div class="section-header">
+      <p class="section-tag" data-translate="brandName">SEMOLA FOOD & SPICES</p>
+      <h2 class="section-title" data-translate="sectionAboutTitle">Our Story & Promise</h2>
+      <p class="section-subtitle" data-translate="sectionAboutText">
+        Semola Food & Spices is a Government of India Udyam (MSME) Registered Micro Enterprise engaged in the manufacturing, wholesale, and retail of premium food products and spices.
+      </p>
+    </div>
+    
+    <!-- Values Grid -->
+    <h3 style="text-align: center; margin-bottom: 1.5rem; font-family: var(--font-serif); font-size: 1.8rem;" data-translate="sectionValuesTitle">Our Core Values</h3>
+    <div class="values-grid" id="values-container">
+      <div class="value-card" data-translate="valueIntegrity">Integrity</div>
+      <div class="value-card" data-translate="valueQuality">Quality First</div>
+      <div class="value-card" data-translate="valueCustomer">Customer Satisfaction</div>
+      <div class="value-card" data-translate="valueInnovation">Innovation</div>
+      <div class="value-card" data-translate="valueAuthenticity">Authenticity</div>
+      <div class="value-card" data-translate="valueSustainability">Sustainability</div>
+      <div class="value-card" data-translate="valueGlobal">Global Vision</div>
+      <div class="value-card" data-translate="valueTeamwork">Teamwork</div>
+      <div class="value-card" data-translate="valueImprovement">Continuous Improvement</div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why-choose" style="background: rgba(183, 28, 28, 0.01); border-top: 1px solid rgba(212, 175, 55, 0.15);">
+    <div class="section-header">
+      <h2 class="section-title" data-translate="sectionWhyTitle">Why Choose Semola</h2>
+    </div>
+    <div class="why-container">
+      <div class="why-card"><div class="why-icon">🌿</div><h4 data-translate="why1">100% Pure Ingredients</h4></div>
+      <div class="why-card"><div class="why-icon">🥇</div><h4 data-translate="why2">Premium Quality</h4></div>
+      <div class="why-card"><div class="why-icon">👅</div><h4 data-translate="why3">Authentic Taste</h4></div>
+      <div class="why-card"><div class="why-icon">🧼</div><h4 data-translate="why4">Hygienically Processed</h4></div>
+      <div class="why-card"><div class="why-icon">🚫</div><h4 data-translate="why5">No Artificial Colors</h4></div>
+      <div class="why-card"><div class="why-icon">👃</div><h4 data-translate="why6">Fresh Aroma</h4></div>
+      <div class="why-card"><div class="why-icon">📖</div><h4 data-translate="why7">Traditional Recipes</h4></div>
+      <div class="why-card"><div class="why-icon">🌍</div><h4 data-translate="why8">International Quality Standards</h4></div>
+      <div class="why-card"><div class="why-icon">👨‍👩‍👧</div><h4 data-translate="why9">Trusted by Families</h4></div>
+      <div class="why-card"><div class="why-icon">🍳</div><h4 data-translate="why10">Perfect for Every Kitchen</h4></div>
+    </div>
+  </section>
+
+  <!-- Product Showcase Section -->
+  <section id="shop">
+    <div class="section-header">
+      <p class="section-tag" data-translate="btnShopNow">Shop Now</p>
+      <h2 class="section-title" id="shop-headline-lang">Our Pure Spice Collection</h2>
+      <p class="section-subtitle">Select from our trials, standard single powders, or rich blends. All packs crafted to retain natural spices essential oils.</p>
+    </div>
+
+    <!-- Product Category Filters -->
+    <div class="filter-container" id="product-filters">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="trial" data-translate="badgeTrialPack">₹10 Trial Pack</button>
+      <button class="filter-btn" data-category="spices" data-translate="badgePremium">Premium Spices</button>
+      <button class="filter-btn" data-category="blends" data-translate="badgeGourmet">Gourmet Blends</button>
+      <button class="filter-btn" data-category="ghee">Pure Ghee</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid-container" id="product-grid">
+      <!-- Rendered dynamically -->
+    </div>
+  </section>
+
+  <!-- Desi Ghee Featured Spotlight Section -->
+  <section id="desi-ghee" class="ghee-spotlight">
+    <div class="ghee-grid">
+      <div class="ghee-info-wrapper">
+        <span class="ghee-badge" data-translate="badgeBestSeller">Best Seller</span>
+        <h2 class="section-title" data-translate="sectionGheeTitle" style="text-align: left; margin-bottom: 0.5rem;">Premium Desi Cow Ghee</h2>
+        <h4 style="color: var(--color-secondary); font-size: 1.2rem; margin-bottom: 1.5rem;" data-translate="gheeSubtitle">Fresh • Natural • Rich Aroma</h4>
+        <p style="margin-bottom: 2rem; line-height: 1.7;" data-translate="gheeDesc">
+          Crafted using the traditional Bilona method inspiration. Slowly simmered to perfection, producing golden granulated texture and a divine, rich aroma.
+        </p>
+        <button class="btn btn-primary ghee-add-cart-btn" data-id="desi-cow-ghee">Add to Pantry Cart</button>
+      </div>
+      <div class="ghee-img-wrapper">
+        <img src="assets/desi_ghee.jpg" alt="Premium Desi Cow Ghee" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\'><rect width=\'100%\' height=\'100%\' fill=\'%23D4AF37\'/><text x=\'50%\' y=\'55%\' font-size=\'40\' fill=\'white\' text-anchor=\'middle\'>Premium Ghee</text></svg>'">
+      </div>
+    </div>
+  </section>
+
+  <!-- Recipe of the Day Spotlight Section -->
+  <section class="recipe-day-section" style="border-top: 1px solid rgba(212, 175, 55, 0.15); border-bottom: 1px solid rgba(212, 175, 55, 0.15);">
+    <div class="recipe-day-container">
+      <span class="recipe-day-badge">🍛 Recipe of the Day</span>
+      <h2 class="recipe-day-title" id="daily-recipe-title">Semola Magic Masala Stirfry</h2>
+      <p class="recipe-day-desc" id="daily-recipe-desc">Toss noodles or rice on high flame with fresh garden vegetables, rich A2 cow ghee, and Semola Magic Masala for a zesty aroma and magical taste in under 15 minutes.</p>
+      <div style="display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+        <span class="stat-item" style="margin-top:0;">⏱️ Prep: 5 mins</span>
+        <span class="stat-item" style="margin-top:0;">🔥 Cook: 10 mins</span>
+        <span class="stat-item" style="margin-top:0;">👥 Serves: 2</span>
+      </div>
+      <button class="btn btn-primary" id="daily-recipe-cook-btn">Start Interactive Cooking Helper</button>
+    </div>
+  </section>
+
+  <!-- Founders Section -->
+  <section id="founders" style="border-top: 1px solid rgba(212, 175, 55, 0.15);">
+    <div class="section-header">
+      <p class="section-tag" data-translate="navFounders">Founders</p>
+      <h2 class="section-title" data-translate="sectionFoundersTitle">Meet Our Founders</h2>
+      <p class="section-subtitle" data-translate="foundersSubtitle">The visionaries behind Semola Food & Spices</p>
+    </div>
+
+    <!-- Founders Quote Box -->
+    <blockquote class="founders-quote-box">
+      <span style="font-size: 4rem; position: absolute; left: 10px; top: -20px; opacity: 0.15; font-family: serif;">“</span>
+      <p data-translate="foundersQuote">"Great brands are built on trust, quality, and a vision that reaches beyond borders. At Semola, we are committed to delivering authentic Indian flavors to families around the world."</p>
+      <span style="font-size: 4rem; position: absolute; right: 10px; bottom: -40px; opacity: 0.15; font-family: serif;">”</span>
+    </blockquote>
+
+    <!-- Founders Cards Grid -->
+    <div class="founder-grid" id="founders-container">
+      <!-- Generated dynamically in app.js -->
+    </div>
+  </section>
+
+  <!-- Recipes Section -->
+  <section id="recipes" style="background: rgba(183, 28, 28, 0.01); border-top: 1px solid rgba(212, 175, 55, 0.15); border-bottom: 1px solid rgba(212, 175, 55, 0.15);">
+    <div class="section-header">
+      <p class="section-tag" data-translate="navRecipes">Recipes</p>
+      <h2 class="section-title" data-translate="sectionRecipesTitle">Interactive Recipe Hub</h2>
+      <p class="section-subtitle" data-translate="recipesSubtitle">Unlock culinary secrets using Semola Spices</p>
+    </div>
+
+    <!-- Featured Recipes (Signature Dishes) -->
+    <h3 style="font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center; color: var(--color-primary);" id="featured-recipes-header">⭐️ Signature Dishes</h3>
+    <div class="grid-container" id="featured-recipes-container" style="margin-bottom: 4rem;">
+      <!-- Generated dynamically in app.js -->
+    </div>
+
+    <!-- All Recipes Horizontal Scroller -->
+    <h3 style="font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center; color: var(--color-primary);">🥘 Explore 100+ Authentic Dishes</h3>
+    <div style="display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; justify-content: center;">
+      <input type="text" id="recipe-search-input" class="form-control" style="max-width: 400px; border-radius: 30px;" placeholder="Search 100+ recipes (e.g. Biryani)...">
+    </div>
+
+    <div class="recipes-horizontal-scroll-container">
+      <button class="scroll-arrow-btn prev-arrow" id="recipes-scroll-prev">&lt;</button>
+      <div class="recipes-horizontal-scroll" id="recipes-container">
+        <!-- Generated dynamically in app.js -->
+      </div>
+      <button class="scroll-arrow-btn next-arrow" id="recipes-scroll-next">&gt;</button>
+    </div>
+  </section>
+
+  <!-- Global Presence / Mission map -->
+  <section id="mission">
+    <div class="section-header">
+      <p class="section-tag" data-translate="navMission">Our Vision</p>
+      <h2 class="section-title" data-translate="sectionGlobalTitle">Global Presence</h2>
+      <p class="section-subtitle" data-translate="globalSubtitle">Export-ready premium Indian spices reaching global kitchens</p>
+    </div>
+
+    <!-- Map container -->
+    <div style="position: relative; max-width: 900px; margin: 0 auto; background: var(--card-bg); padding: 2rem; border-radius: 20px; border: var(--card-border);" id="map-visualizer">
+      <svg class="world-map-svg" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+        <path d="M150,150 L180,140 L210,160 L240,150 L260,170 L280,160 L290,180 L270,210 L250,230 L230,240 L210,250 L180,240 L160,200 Z" fill="#2d221e" /> <!-- NA -->
+        <path d="M230,260 L250,270 L270,300 L280,340 L290,380 L280,420 L260,450 L240,430 L250,380 L240,330 L220,300 Z" fill="#2d221e" /> <!-- SA -->
+        <path d="M460,150 L490,140 L520,130 L550,140 L560,160 L540,180 L520,190 L500,200 L470,180 Z" fill="#2d221e" /> <!-- EU -->
+        <path d="M480,210 L520,200 L560,220 L580,250 L590,290 L580,340 L560,370 L540,380 L520,360 L500,320 L480,270 L470,230 Z" fill="#2d221e" /> <!-- AF -->
+        <path d="M570,130 L620,120 L680,130 L740,140 L800,160 L830,190 L850,220 L840,260 L800,280 L750,270 L700,260 L660,250 L620,230 L580,200 L560,170 Z" fill="#2d221e" /> <!-- AS -->
+        <path d="M640,240 L650,260 L645,280 L630,270 Z" fill="#B71C1C" /> <!-- IN -->
+        <path d="M780,360 L830,350 L860,370 L870,400 L840,430 L790,420 L760,390 Z" fill="#2d221e" /> <!-- AU -->
+        <g id="map-markers-group"></g>
+      </svg>
+      <div class="map-tooltip" id="map-tooltip-box"></div>
+    </div>
+  </section>
+
+  <!-- Instagram Aesthetic Gallery Section -->
+  <section class="insta-gallery-section" style="border-top: 1px solid rgba(212, 175, 55, 0.15);">
+    <div class="section-header">
+      <p class="section-tag">📸 Culinary Stories</p>
+      <h2 class="section-title">Follow Us On Instagram</h2>
+      <p class="section-subtitle">Discover kitchen ideas, food aesthetics, and global tables featuring @SemolaFoods</p>
+    </div>
+    <div class="insta-grid">
+      <div class="insta-item">
+        <img src="assets/hero_bg.jpg" alt="Cinematic spice bowls and culinary styling featuring Semola Garam Masala">
+        <div class="insta-overlay"><span>🔍 View Styling</span></div>
+      </div>
+      <div class="insta-item">
+        <img src="assets/royal_kashmiri.jpg" alt="Vibrant Kashmiri Rogan Josh cooked with Semola Kashmiri Red Chilli">
+        <div class="insta-overlay"><span>🔍 View Styling</span></div>
+      </div>
+      <div class="insta-item">
+        <img src="assets/malai_kofta.jpg" alt="Delicious Malai Kofta seasoned with Semola Kitchen King Masala">
+        <div class="insta-overlay"><span>🔍 View Styling</span></div>
+      </div>
+      <div class="insta-item">
+        <img src="assets/desi_ghee.jpg" alt="Granulated golden ghee being drizzled over hot flatbreads">
+        <div class="insta-overlay"><span>🔍 View Styling</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards & Certifications Section -->
+  <section class="awards-section" style="background: rgba(183, 28, 28, 0.01); border-top: 1px solid rgba(212, 175, 55, 0.15);">
+    <div class="section-header">
+      <p class="section-tag">🏆 Trust & Standards</p>
+      <h2 class="section-title">Global Awards & Certifications</h2>
+    </div>
+    <div class="awards-grid">
+      <div class="award-card">
+        <div class="award-badge-icon">📜</div>
+        <h4>FSSAI Certified</h4>
+        <p>Govt. of India Food License: 21126122000024</p>
+      </div>
+      <div class="award-card">
+        <div class="award-badge-icon">🏢</div>
+        <h4>UDYAM Registered</h4>
+        <p>Govt. of India MSME: UDYAM-JH-11-0059935</p>
+      </div>
+      <div class="award-card">
+        <div class="award-badge-icon">🛡️</div>
+        <h4>HACCP Certified</h4>
+        <p>Hazard Analysis Critical Control Point Purity Standards</p>
+      </div>
+      <div class="award-card">
+        <div class="award-badge-icon">✈️</div>
+        <h4>Export Ready</h4>
+        <p>Hygienically Packed and Certified for 100+ Countries</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Forms Section -->
+  <section id="contact">
+    <div class="section-header">
+      <p class="section-tag" data-translate="navHome">Home</p>
+      <h2 class="section-title" data-translate="sectionContactTitle">Connect With Us</h2>
+      <p class="section-subtitle" data-translate="contactSubtitle">Get in touch for bulk orders, distributor inquiries, or feedback</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start;">
+      <div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 1rem; color: var(--color-primary);" data-translate="brandName">SEMOLA FOOD & SPICES</h3>
+        <p style="margin-bottom: 2rem; color: var(--text-muted);">
+          Government of India Udyam (MSME) Registered Micro Enterprise engaged in the manufacturing, wholesale, and retail of premium food products and spices.
+        </p>
+        
+        <p style="margin-bottom: 0.8rem;"><strong>📍 Registered Business Address:</strong><br><span>Dadpur, Chouparan, Hazaribag, Jharkhand – 825406</span></p>
+        <p style="margin-bottom: 0.8rem;"><strong>📧 Email:</strong><br><a href="mailto:semolafoods@gmail.com" style="color: var(--color-primary);">semolafoods@gmail.com</a></p>
+        <p style="margin-bottom: 1.2rem;"><strong>📞 Contact details:</strong><br>WhatsApp: +91 9341500970<br>FSSAI #: 21126122000024<br>UDYAM #: UDYAM-JH-11-0059935</p>
+        <p style="margin-bottom: 2rem; display: flex; gap: 1rem; font-size: 0.9rem;">
+          <a href="https://instagram.com/semolafood" target="_blank" style="color: var(--color-primary); font-weight: 600;">📸 Instagram (@semolafood)</a>
+          <span style="color: var(--text-muted);">|</span>
+          <a href="https://facebook.com/semolafood" target="_blank" style="color: var(--color-primary); font-weight: 600;">👥 Facebook (@semolafood)</a>
+        </p>
+        
+        <!-- Live WhatsApp button -->
+        <a href="https://wa.me/919341500970" target="_blank" class="btn btn-primary" style="background-color: #25D366; border-color: #25D366; color: white;">
+          💬 Chat on WhatsApp (+91 9341500970)
+        </a>
+      </div>
+
+      <!-- Live inquiry Form -->
+      <div style="background: var(--card-bg); padding: 2.5rem; border-radius: 16px; border: var(--card-border);" id="inquiry-form-card">
+        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+          <button class="filter-btn active" id="btn-toggle-distributor-form" data-translate="distributorFormTitle">Distributor Form</button>
+          <button class="filter-btn" id="btn-toggle-bulk-form" data-translate="bulkFormTitle">Bulk Order Form</button>
+        </div>
+
+        <form id="contact-inquiry-form">
+          <div class="form-group">
+            <label for="form-input-name" data-translate="formName">Full Name / Business Name</label>
+            <input type="text" id="form-input-name" class="form-control" placeholder="Enter your full name or shop/company name" required>
+          </div>
+          <div class="form-group">
+            <label for="form-input-email" data-translate="formEmail">Email Address</label>
+            <input type="email" id="form-input-email" class="form-control" placeholder="example@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="form-input-phone" data-translate="formPhone">Phone Number</label>
+            <input type="tel" id="form-input-phone" class="form-control" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+          <div class="form-group">
+            <label for="form-input-message" data-translate="formMsg">Your Message / Inquiry Details</label>
+            <textarea id="form-input-message" class="form-control" rows="4" placeholder="Specify your distribution area or bulk order details..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;" data-translate="formSubmit">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Products Bar -->
+  <section style="background: rgba(212, 175, 55, 0.05); border-top: 1px solid rgba(212, 175, 55, 0.15);">
+    <h3 style="text-align: center; margin-bottom: 2rem; font-family: var(--font-serif); font-size: 1.8rem;">Expanding Our Range</h3>
+    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;" id="future-products-container">
+      <!-- Dynamic list of future items -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 data-translate="brandName">SEMOLA FOOD & SPICES</h4>
+        <p style="margin-bottom: 1.5rem;" data-translate="tagline">हर स्वाद हमारी पहचान</p>
+        <p>Premium spices crafted with purity, passion and tradition. Sourced sustainably, processed hygienically, and packaged to preserve fresh aroma.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-translate="footerLinks">Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#shop">Shop Spices</a></li>
+          <li><a href="#recipes">Recipes</a></li>
+          <li><a href="#founders">Founders</a></li>
+          <li><a href="#mission">Our Vision</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-translate="footerPolicy">Policies</h4>
+        <ul>
+          <li><a href="#" data-translate="policyPrivacy">Privacy Policy</a></li>
+          <li><a href="#" data-translate="policyTerms">Terms of Service</a></li>
+          <li><a href="#" data-translate="policyRefund">Refund Policy</a></li>
+          <li><a href="#" data-translate="policyShipping">Shipping Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>FSSAI, Udyam & Contact</h4>
+        <p style="margin-bottom: 0.5rem;">📜 FSSAI #: 21126122000024</p>
+        <p style="margin-bottom: 0.5rem;">🏢 UDYAM #: UDYAM-JH-11-0059935</p>
+        <p style="margin-bottom: 0.5rem;">📧 semolafoods@gmail.com</p>
+        <p style="margin-bottom: 1rem;">📞 +91 9341500970</p>
+        <div style="display: flex; gap: 0.8rem; font-size: 0.9rem;">
+          <a href="https://instagram.com/semolafood" target="_blank" style="color: var(--color-secondary);">📸 Instagram</a>
+          <span style="color: rgba(255,255,255,0.2);">|</span>
+          <a href="https://facebook.com/semolafood" target="_blank" style="color: var(--color-secondary);">👥 Facebook</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 2rem; display: flex; justify-content: space-between; flex-wrap: wrap; font-size: 0.85rem; color: #A59E8D;">
+      <p>&copy; 2026 SEMOLA FOOD & SPICES. All rights reserved.</p>
+      <p>Purity • Tradition • Innovation</p>
+    </div>
+  </footer>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="drawer-backdrop" id="cart-backdrop"></div>
+  <div class="side-drawer" id="cart-drawer-element">
+    <div class="drawer-header">
+      <h2 data-translate="cartTitle">Your Spice Cart</h2>
+      <button class="drawer-close-btn" id="close-cart-btn">&times;</button>
+    </div>
+    <div class="drawer-content" id="cart-items-list">
+      <!-- Dynamic cart content -->
+    </div>
+    <div class="drawer-footer">
+      <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 1.5rem; font-size: 1.15rem;">
+        <span data-translate="cartSubtotal">Subtotal</span>
+        <span id="cart-subtotal-val">₹0</span>
+      </div>
+      <button class="btn btn-primary" id="cart-checkout-action-btn" style="width: 100%;" data-translate="btnCheckout">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Slide-out Wishlist Drawer -->
+  <div class="side-drawer" id="wishlist-drawer-element">
+    <div class="drawer-header">
+      <h2 data-translate="wishlistTitle">Your Wishlist</h2>
+      <button class="drawer-close-btn" id="close-wishlist-btn">&times;</button>
+    </div>
+    <div class="drawer-content" id="wishlist-items-list">
+      <!-- Dynamic wishlist content -->
+    </div>
+  </div>
+
+  <!-- Product Details Modal -->
+  <div class="drawer-backdrop" id="modal-backdrop"></div>
+  <div class="modal" id="product-detail-modal">
+    <button class="modal-close-btn" id="close-p-modal-btn">&times;</button>
+    <div style="display: grid; grid-template-columns: 1fr 1.2fr;" id="product-detail-modal-content">
+      <!-- Dynamic content -->
+    </div>
+  </div>
+
+  <!-- Checkout / Success Modal -->
+  <div class="modal" id="checkout-success-modal" style="max-width: 450px;">
+    <button class="modal-close-btn" id="close-checkout-modal-btn">&times;</button>
+    <div style="padding: 3rem 2rem; text-align: center;">
+      <div style="font-size: 3.5rem; color: #D4AF37; margin-bottom: 1.5rem;">✨</div>
+      <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 0.8rem;">Order Placed!</h3>
+      <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">
+        Thank you for choosing Semola! We are preparing your authentic flavors and shipping them to your kitchen.
+      </p>
+      <button class="btn btn-primary" id="checkout-success-close-action" style="width: 100%;">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- Cooking Step-by-Step Modal -->
+  <div class="modal" id="cooking-helper-modal" style="max-width: 800px;">
+    <button class="modal-close-btn" id="close-cooking-modal-btn">&times;</button>
+    <div style="display: flex; flex-direction: column; min-height: 50vh;">
+      <div style="padding: 1.2rem 2rem; border-bottom: var(--card-border); display: flex; justify-content: space-between; align-items: center;">
+        <h3 id="cooking-recipe-title" style="font-family: var(--font-serif); font-size: 1.3rem;">Recipe Title</h3>
+        <span id="cooking-step-tracker" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Step 1 of 5</span>
+      </div>
+      <div style="height: 5px; background: rgba(0,0,0,0.05); width: 100%;">
+        <div id="cooking-progress-indicator" style="height: 100%; background: var(--color-primary); width: 0%; transition: width 0.3s ease;"></div>
+      </div>
+      <div style="flex-grow: 1; padding: 3rem 2rem; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <span id="cooking-step-label" style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-primary); font-weight: 700; letter-spacing: 1px; margin-bottom: 0.8rem;">Instruction</span>
+        <div id="cooking-step-instruction-content" style="font-family: var(--font-serif); font-size: 1.6rem; line-height: 1.5; max-width: 650px;">
+          Step description text here...
+        </div>
+      </div>
+      <div style="padding: 1.5rem 2rem; border-top: var(--card-border); display: flex; justify-content: space-between;">
+        <button class="btn btn-secondary" id="cooking-prev-step-btn" style="padding: 0.5rem 1.2rem;">Previous</button>
+        <button class="btn btn-primary" id="cooking-next-step-btn" style="padding: 0.5rem 1.5rem;">Next Step</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating AI Assistant Chat Window -->
+  <button class="ai-chatbot-fab" id="open-ai-chat-btn" aria-label="Open AI Chef">👨‍🍳</button>
+  <div class="ai-chat-window" id="ai-chat-window-element">
+    <div class="chat-header">
+      <span data-translate="aiAssistantTitle">Semola AI Chef Assistant</span>
+      <button id="close-ai-chat-btn" style="background:none; border:none; color:white; font-size:1.2rem; cursor:pointer;">&times;</button>
+    </div>
+    <div class="chat-messages" id="ai-chat-messages-container">
+      <div class="chat-bubble bot" data-translate="aiWelcome">
+        Namaste! I am your Semola AI Chef. What Indian recipe would you like to cook today?
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="ai-chat-input" class="form-control" style="border-radius: 20px;" placeholder="Ask me a recipe (e.g. Pav Bhaji)...">
+      <button class="card-btn" id="send-ai-chat-btn">Send</button>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
